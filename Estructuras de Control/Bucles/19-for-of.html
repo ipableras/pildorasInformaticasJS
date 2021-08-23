@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>For-off</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body style="font-size: 2em;">
+    <script type="text/javascript">
+
+        let edades = [7, 9, 15, 25, 37];
+
+
+        /*
+        for(let i=0; i<edades.length; i++){
+            document.write(edades[i] + "</br>");
+        }
+        */
+
+        for(let i of edades){
+            document.write(i + "</br>");
+        }
+
+        document.write("</br>");
+
+        // for-of 19
+        let datos = [[1, 7, 9],9,,,,,15,"Juan",true];
+
+        for(let dato of datos){
+            document.write(dato + "</br>");
+        }
+
+        document.write("</br>");
+
+        datos = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        document.write(datos[1]);
+        document.write("</br>");
+        document.write(datos[1][2]);
+        
+        document.write("</br>");
+
+        datos = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]; 
+        
+        for(dim1 of datos){
+            for(dim2 of dim1){
+                document.write(dim2 + "</br>");
+            }
+        }
+
+        document.write("</br>");
+
+        let email = "juan@pildorasinformaticas.es";
+        let arroba = 0;
+
+        for(letra of email){
+            if(letra == "@"){
+                arroba++;
+            }
+        }
+
+        if(arroba == 1){
+            document.write("Email correcto");
+        }else{
+            document.write("Email incorrecto");
+        }
+
+
+    </script>
+    
+</body>
+</html>
