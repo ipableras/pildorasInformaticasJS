@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+    
+        let p1 = {nombre: "Juan", edad: 18};
+        let coche = {color:"rojo", potencia:400, propietario:p1};
+
+        coche.color = "azul";
+
+        // Forma del Punto
+        document.write(coche.color);
+        document.write("</br>");
+
+        //Esta es otra forma comoda en JavaScript o PHP utilizar los arrays
+        // Forma Array Asociativos
+        coche["color"] = "verde";
+        document.write(coche["color"]);
+
+        //JavaScript es muy TIPADO DEVIL, nos va a dejar hacer michas mas cosas
+        document.write("</br>");
+        coche["pasajeros"] = 5;
+        document.write(coche.pasajeros);
+
+        document.write("</br>");
+        coche.pasajeros = 4;
+        document.write(coche.pasajeros);
+
+
+        //Vamos a ver otra cosa mas loca, para que se vea bien
+        document.write("</br>");
+
+        for(let i=0; i<5; i++){
+            coche[`cilindrada${i}`] = 2000 + (i*100);
+        }
+
+        document.write(coche.propietario.edad + "</br>");
+        let borrado_exito = delete coche.propietario;// Si funciona te avisa con el true
+        document.write(borrado_exito);
+        document.write(coche.hasOwnProperty("propietario"));
+        //console.log(coche);
+
+        document.write("</br>");
+        document.write("</br>");
+        for(let p in coche){
+            document.write(p + "</br>");
+        }
+
+    </script>
+
+</body>
+</html>
