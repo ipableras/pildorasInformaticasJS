@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+    
+        let p1={nombre:"Juan", edad:19};
+        let coche={color:"rojo", potencia:400, propietario:p1};
+
+        coche["pasajeros"]=5;
+
+        let furgoneta={carga:4500};
+
+        /*
+        //Esta forma esta perfecta, pero es una forma antigua. Vamos a verlo en JS6
+        for(let clave of Object.keys(coche)){
+            furgoneta[clave] = coche[clave];
+        }
+        */
+
+        // Esta es la nueva version de JS6 y es mucha más comoda
+        Object.assign(furgoneta, coche);
+
+        console.log(furgoneta);
+
+
+        //----- Serializar y Deserializar ---------
+        console.log(coche);
+
+        //Serializar
+        let conceSerializador = JSON.stringify(coche);
+        console.log(conceSerializador);
+
+        //Deserializado
+        let cocheDeserializado=JSON.parse(conceSerializador);
+        console.log(cocheDeserializado);
+
+        //-----toString---------
+        coche = {color:"rojo", potencia:400, propietario:p1,
+    toStrng:function(){
+        return "El color del coche es: " + `${this.color}` +
+            " y tiene " + `${this.potencia}` + " caballos";
+    }};
+
+        document.write(coche.toStrng());
+
+    </script>
+
+</body>
+</html>
